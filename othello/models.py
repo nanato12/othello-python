@@ -28,9 +28,7 @@ class Stone:
     def reverse(self) -> None:
         if self.color == COLOR.NONE:
             raise ImpossibleReverseError("石がないのに反転できないぜ")
-        self.color = {COLOR.BLACK: COLOR.WHITE, COLOR.WHITE: COLOR.BLACK}[
-            self.color
-        ]
+        self.color = COLOR.BLACK if self.color == COLOR.WHITE else COLOR.BLACK
 
     @property
     def effect_points(self) -> List[List[Tuple[int, int]]]:
